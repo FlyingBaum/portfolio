@@ -4,15 +4,17 @@
     @click="openUrl"
   >
     <div class="flex">
-        <span class="text-lg md:text-xl w-40 md:w-auto font-bold uppercase truncate"
-        >{{ getRepoName() }}</span>
-        <div class="inline ml-auto">
-            <span>Stars:</span>
-            <span class="ml-1 text-red-500">{{ getRepoStarCount() }}</span>
-        </div>
+      <span
+        class="text-lg md:text-xl w-40 md:w-auto font-bold uppercase truncate"
+        >{{ getRepoName() }}</span
+      >
+      <div class="inline ml-auto">
+        <span>Stars:</span>
+        <span class="ml-1 text-red-500">{{ getRepoStarCount() }}</span>
+      </div>
     </div>
     <div class="wrap w-full text-left">
-        <p class="py-6 text-sm md:text-lg">{{ getRepoDesc() }}</p>
+      <p class="py-6 text-sm md:text-lg">{{ getRepoDesc() }}</p>
     </div>
   </div>
 </template>
@@ -27,22 +29,21 @@ export default class RepoCard extends Vue {
   @Prop() private repoStarCount!: number;
   @Prop() private repoDescription!: string;
 
-  getRepoName() {
+  getRepoName(): string {
     return this.repoName;
   }
-  getRepoUrl() {
+  getRepoUrl(): string {
     return this.repoUrl;
   }
-  getRepoStarCount() {
+  getRepoStarCount(): number {
     return this.repoStarCount;
   }
-  getRepoDesc() {
+  getRepoDesc(): string {
     return this.repoDescription;
   }
 
-  openUrl() {
-      window.open(this.repoUrl, "_blank")
+  openUrl(): void {
+    window.open(this.repoUrl, "_blank");
   }
-
 }
 </script>

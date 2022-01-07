@@ -32,7 +32,7 @@ interface Repo {
 export default class Home extends Vue {
   repos: Repo[] = [];
 
-  mounted() {
+  mounted(): void {
     axios
       .get("https://api.github.com/users/FlyingBaum/repos?sort=updated")
       .then((values) => {
