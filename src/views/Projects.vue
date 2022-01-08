@@ -1,6 +1,8 @@
 <template>
-  <div class="home">
-    <h1 class="text-6xl m-4"><span class="text-red-500">Krist</span> Baliev</h1>
+  <div class="projects">
+    <h1 class="text-6xl m-4">
+      <span class="text-green-500">Krist</span> Baliev
+    </h1>
     <div class="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4">
       <div v-for="repo in repos" :key="repo.repoName" class="m-4">
         <repo-card
@@ -29,7 +31,7 @@ interface Repo {
 @Component({
   components: { RepoCard },
 })
-export default class Home extends Vue {
+export default class Projects extends Vue {
   repos: Repo[] = [];
 
   mounted(): void {
@@ -46,6 +48,10 @@ export default class Home extends Vue {
         });
       })
       .catch(console.error);
+  }
+
+  beforeCreate(): void {
+    document.body.className = "projects";
   }
 }
 </script>

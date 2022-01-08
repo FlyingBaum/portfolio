@@ -1,17 +1,33 @@
 <template>
   <div id="app">
-    <div id="nav" class="bg-red-500 p-4 shadow-lg flex flex-col lg:flex-row">
+    <div
+      id="nav"
+      class="bg-green-500 p-4 shadow-lg flex flex-col lg:flex-row items-stretch"
+    >
+      <h1 class="text-5xl py-1 mx-5 font-cuteFont uppercase">Krist Baliev</h1>
       <router-link
         to="/"
-        class="text-white px-4 py-2 m-1 rounded-md"
-        exact-active-class="bg-red-800"
-        >Home</router-link
+        class="text-white text-lg px-4 py-2 m-1 rounded-md"
+        exact-active-class="bg-green-800"
+        >About</router-link
       >
       <router-link
-        to="/about"
-        class="text-white px-4 py-2 m-1 rounded-md"
-        exact-active-class="bg-red-800"
-        >About</router-link
+        to="/skills"
+        class="text-white text-lg px-4 py-2 m-1 rounded-md"
+        exact-active-class="bg-green-800"
+        >Skills</router-link
+      >
+      <router-link
+        to="/projects"
+        class="text-white text-lg px-4 py-2 m-1 rounded-md"
+        exact-active-class="bg-green-800"
+        >Projects</router-link
+      >
+      <router-link
+        to="/social"
+        class="text-white text-lg px-4 py-2 m-1 rounded-md"
+        exact-active-class="bg-green-800"
+        >Social</router-link
       >
     </div>
     <router-view />
@@ -20,25 +36,25 @@
 
 <style lang="scss">
 @font-face {
-  font-family: "Montserrat";
-  src: url("assets/Montserrat/Montserrat-Thin.ttf");
+  font-family: "Dosis";
+  src: url("assets/Dosis/static/Dosis-Light.ttf");
   font-weight: normal;
 }
 
 @font-face {
-  font-family: "Montserrat";
-  src: url("assets/Montserrat/Montserrat-Bold.ttf");
+  font-family: "Dosis";
+  src: url("assets/Dosis/static/Dosis-Bold.ttf");
   font-weight: bold;
 }
 
 @font-face {
-  font-family: "Montserrat";
-  src: url("assets/Montserrat/Montserrat-Light.ttf");
+  font-family: "Dosis";
+  src: url("assets/Dosis/static/Dosis-Light.ttf");
   font-weight: 100;
 }
 
 #app {
-  font-family: Montserrat, sans-serif;
+  font-family: Dosis, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
