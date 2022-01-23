@@ -1,7 +1,7 @@
 <template>
   <div class="projects">
     <h1 class="text-6xl m-4">
-      <span class="text-indigo-500">Krist</span> Baliev
+      <span class="text-gray-500">Krist</span> Baliev
     </h1>
     <div class="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4">
       <div v-for="repo in repos" :key="repo.repoName" class="m-4">
@@ -39,12 +39,14 @@ export default class Projects extends Vue {
       .get("https://api.github.com/users/FlyingBaum/repos?sort=updated")
       .then((values) => {
         values.data.slice(0, 10).forEach((repo: any) => {
-          this.repos.push({
-            repoName: repo.name,
-            repoDesc: repo.desc,
-            repoStarCount: repo.stargazers_count,
-            repoUrl: repo.html_url,
-          });
+          if (repo.name !== "FlyingBaum") {
+            this.repos.push({
+              repoName: repo.name,
+              repoDesc: repo.description,
+              repoStarCount: repo.stargazers_count,
+              repoUrl: repo.html_url,
+            });
+          }
         });
       })
       .catch(console.error);

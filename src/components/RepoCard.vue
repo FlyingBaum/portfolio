@@ -10,7 +10,7 @@
       >
       <div class="inline ml-auto">
         <span>Stars:</span>
-        <span class="ml-1 text-red-500">{{ getRepoStarCount() }}</span>
+        <span class="ml-1 text-gray-500">{{ getRepoStarCount() }}</span>
       </div>
     </div>
     <div class="wrap w-full text-left">
